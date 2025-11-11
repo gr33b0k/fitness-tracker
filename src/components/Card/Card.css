@@ -1,0 +1,60 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 40px;
+    border: 2px solid var(--page-bg);
+    min-width: 250px;
+}
+
+.card__header {
+    margin-bottom: 25px;
+}
+
+.card__header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card__description {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}
+
+.card__description p:nth-child(1) {
+    color: #4c5260;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.card__description p:nth-child(2) {
+    color: var(--text-primary);
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.card__description p span {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.card__chart--gauge::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4c5260;
+}

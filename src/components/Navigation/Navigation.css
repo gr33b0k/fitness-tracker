@@ -1,0 +1,33 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.navigation__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 32px;
+    padding: 10px 14px;
+    transition: all 0.2s ease;
+}
+
+.navigation__link--active {
+    background-color: var(--accent);
+    color: var(--text-accent)
+}
+
+.navigation__link:not(.navigation__link--active):hover {
+    background-color: var(--accent-hover);
+    color: var(--text-accent);
+}
+
+.navigation__icon {
+    font-size: 1.5rem;
+}
