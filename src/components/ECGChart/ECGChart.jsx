@@ -1,7 +1,7 @@
 import "./ECGChart.css";
 
 const ECGChart = ({ bpm = 60 }) => {
-  const duration = 60 / bpm;
+  const duration = (60 / bpm) * 6;
 
   return (
     <svg
@@ -35,7 +35,7 @@ const ECGChart = ({ bpm = 60 }) => {
 
       <circle r="5" fill="#FEF180">
         <animateMotion
-          dur={`${duration * 5}s`}
+          dur={`${duration}s`}
           repeatCount="indefinite"
           rotate="auto"
         >
@@ -45,7 +45,7 @@ const ECGChart = ({ bpm = 60 }) => {
 
       <circle r="3" fill="#ffffff">
         <animateMotion
-          dur={`${duration * 5}s`}
+          dur={`${duration}s`}
           repeatCount="indefinite"
           rotate="auto"
         >

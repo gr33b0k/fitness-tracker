@@ -4,29 +4,9 @@ import Diet from "./pages/Diet.jsx";
 import Layout from "./pages/Layout.jsx";
 import Analysis from "./pages/Analysis.jsx";
 import Recepies from "./pages/Recepies.jsx";
+import { userInfo } from "./data/data.js";
 
 function App() {
-  const userInfo = {
-    id: 1,
-    name: "Bob",
-    surname: "Johnson",
-    weight: 79,
-    height: 189,
-    norms: {
-      calorie_intake: 2000,
-      protein_intake: 150,
-      carbs_intake: 200,
-      fat_intake: 50,
-      water_intake: 2500,
-    },
-    current: {
-      calorie_intake: 1000,
-      protein_intake: 50,
-      carbs_intake: 100,
-      fat_intake: 30,
-      water_intake: 1000,
-    },
-  };
   return (
     <Router>
       <Routes>

@@ -59,12 +59,11 @@ const Home = ({ userInfo }) => {
           />
           <h2 className="card__description">
             <p>
-              <span>{userInfo.current.calorie_intake}</span> kcal
+              <span>{userCurrents.calorie_intake}</span> kcal
             </p>
             <p>
               Remaining:{" "}
-              {userInfo.norms.calorie_intake - userInfo.current.calorie_intake}{" "}
-              kcal
+              {userNorms.calorie_intake - userCurrents.calorie_intake} kcal
             </p>
           </h2>
         </Card>
@@ -75,6 +74,12 @@ const Home = ({ userInfo }) => {
           titleIcon={<PiHeartbeat />}
         >
           <ECGChart bpm={110} />
+          <h2 className="card__description">
+            <p>
+              <span>{userCurrents.bpm}</span> bpm
+            </p>
+            <p>Normal: {userNorms.bpm} bpm</p>
+          </h2>
         </Card>
         <Card
           colSpan={1}
