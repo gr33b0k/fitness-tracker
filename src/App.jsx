@@ -20,7 +20,7 @@ function App() {
       water_intake: 2500,
     },
     current: {
-      calorie_intake: 2000,
+      calorie_intake: 1000,
       protein_intake: 50,
       carbs_intake: 100,
       fat_intake: 30,

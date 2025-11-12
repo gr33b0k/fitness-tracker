@@ -12,12 +12,12 @@ const SemiCircleChart = ({
   showNeedle = false,
   className,
 }) => {
-  // TODO: Не изменять проп
-  percentage = percentage > 100 ? 100 : percentage;
+  const validatedPercentage =
+    percentage < 0 ? 0 : percentage > 100 ? 100 : percentage;
   const radius = 50 - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
   const half = circumference / 2;
-  const strokeDashoffset = half - (percentage / 100) * half;
+  const strokeDashoffset = half - (validatedPercentage / 100) * half;
 
   return (
     <svg
@@ -54,7 +54,6 @@ const SemiCircleChart = ({
         clipPath="url(#half)"
         strokeDasharray={`${circumference} ${half}`}
         strokeDashoffset={strokeDashoffset}
-        style={{ "--offset": strokeDashoffset }}
       >
         <animate
           attributeName="stroke-dashoffset"
@@ -80,14 +79,13 @@ const SemiCircleChart = ({
             fill={strokeColor}
             fill-rule="evenodd"
             className="needle"
-            // style={{ "--angle": `${(percentage / 100) * 180}deg` }}
           >
             <animateTransform
               attributeName="transform"
               attributeType="XML"
               type="rotate"
               from="0 50 50"
-              to={`${(percentage / 100) * 180} 50 50`}
+              to={`${(validatedPercentage / 100) * 180} 50 50`}
               dur="1s"
               fill="freeze"
             />
@@ -108,7 +106,7 @@ const SemiCircleChart = ({
             ...fontStyle,
           }}
         >
-          {percentage}
+          {validatedPercentage}
           {percentageSeperator || "%"}
         </text>
       )}
