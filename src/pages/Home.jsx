@@ -11,6 +11,7 @@ import Header from "../components/Header/Header.jsx";
 import PageContent from "../components/PageContent/PageContent.jsx";
 import Card from "../components/Card/Card.jsx";
 import SemiCircleChart from "../components/SemiCircleChart/SemiCircleChart.jsx";
+import ECGChart from "../components/ECGChart/ECGChart.jsx";
 import { stepsData } from "../data/data.js";
 
 const renderTooltip = ({ active, payload }) => {
@@ -72,7 +73,9 @@ const Home = ({ userInfo }) => {
           rowSpan={2}
           title="Heart Rate"
           titleIcon={<PiHeartbeat />}
-        ></Card>
+        >
+          <ECGChart bpm={110} />
+        </Card>
         <Card
           colSpan={1}
           rowSpan={2}

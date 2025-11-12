@@ -24,8 +24,6 @@
   padding: 16px;
   max-width: 1920px;
   font-family: "Montserrat", sans-serif;
-  /* font-optical-sizing: auto; */
-  /* letter-spacing: .05rem; */
   font-size: 1rem;
   display: flex;
 }
