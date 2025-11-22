@@ -1,6 +1,6 @@
 import { PiSignOut } from "react-icons/pi";
 import Navigation from "../Navigation/Navigation.jsx";
-import logo from "../../assets/logo.svg";
+import logo from "../../../assets/logo.svg";
 import "./Sidebar.css";
 
 const Sidebar = () => {

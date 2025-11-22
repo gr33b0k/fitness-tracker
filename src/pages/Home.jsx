@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { PiFire, PiHeartbeat, PiFootprints } from "react-icons/pi";
-import Header from "../components/Header/Header.jsx";
-import PageContent from "../components/PageContent/PageContent.jsx";
-import Card from "../components/Card/Card.jsx";
-import SemiCircleChart from "../components/SemiCircleChart/SemiCircleChart.jsx";
-import ECGChart from "../components/ECGChart/ECGChart.jsx";
-import StepsChart from "../components/StepsChart/StepsChart.jsx";
+import Header from "../components/layout/Header/Header.jsx";
+import PageContent from "../components/layout/PageContent/PageContent.jsx";
+import Card from "../components/ui/Card/Card.jsx";
+import SemiCircleChart from "../components/charts/SemiCircleChart/SemiCircleChart.jsx";
+import ECGChart from "../components/charts/ECGChart/ECGChart.jsx";
+import StepsChart from "../components/charts/StepsChart/StepsChart.jsx";
 
 const Home = ({ userInfo, stepsData }) => {
   const [stepsHover, setStepsHover] = useState(null);

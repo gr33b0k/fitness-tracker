@@ -1,5 +1,5 @@
 import { PiCaretDown } from "react-icons/pi";
-import profile from "../../assets/profile.jpg";
+import profile from "../../../assets/profile.jpg";
 import "./ProfileBadge.css";
 
 const ProfileBadge = ({ userInfo }) => {

@@ -10,8 +10,14 @@ import {
 const StepsChart = ({ stepsData, onHoverValue }) => {
   const handleTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
-      const v = payload[0].payload.value;
-      onHoverValue(v);
+      const pl = payload[0].payload;
+      const value = pl.value;
+      const valueDay = pl.day;
+      // const yesterdayValue = stepsData.filter(
+      //   (day) => day.day + 1 === valueDay
+      // )[0].value;
+
+      onHoverValue(value);
     } else {
       onHoverValue(null);
     }

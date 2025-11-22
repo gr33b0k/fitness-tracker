@@ -1,4 +1,4 @@
-import ProfileBadge from "../ProfileBadge/ProfileBadge";
+import ProfileBadge from "../../ui/ProfileBadge/ProfileBadge";
 import "./Header.css";
 
 const Header = ({ header, subheader, userInfo }) => {
