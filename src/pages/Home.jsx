@@ -1,39 +1,14 @@
-import {
-  Area,
-  AreaChart,
-  XAxis,
-  CartesianGrid,
-  YAxis,
-  Tooltip,
-} from "recharts";
+import { useState } from "react";
 import { PiFire, PiHeartbeat, PiFootprints } from "react-icons/pi";
 import Header from "../components/Header/Header.jsx";
 import PageContent from "../components/PageContent/PageContent.jsx";
 import Card from "../components/Card/Card.jsx";
 import SemiCircleChart from "../components/SemiCircleChart/SemiCircleChart.jsx";
 import ECGChart from "../components/ECGChart/ECGChart.jsx";
-import { stepsData } from "../data/data.js";
+import StepsChart from "../components/StepsChart/StepsChart.jsx";
 
-const renderTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    const data = payload[0].payload;
-    const value = data.value;
-    const day = data.day;
-    // const yesterdayPoint = stepsData.filter((data) => {
-    //   console.log(payload);
-    //   return data.day === parseInt(payload[0].payload.day) - 1;
-    // })[0];
-    return (
-      <div className="chart__tooltip">
-        <h3>{value} steps</h3>
-        <p>yesterday yesterdayPoint</p>
-      </div>
-    );
-  }
-  return null;
-};
-
-const Home = ({ userInfo }) => {
+const Home = ({ userInfo, stepsData }) => {
+  const [stepsHover, setStepsHover] = useState(null);
   const userCurrents = userInfo.current;
   const userNorms = userInfo.norms;
 
@@ -87,48 +62,18 @@ const Home = ({ userInfo }) => {
           title="Steps"
           titleIcon={<PiFootprints />}
         >
-          <AreaChart
-            style={{
-              width: "100%",
-              aspectRatio: 1.3,
-            }}
-            responsive
-            data={stepsData}
-            baseValue="dataMin"
-            margin={{ top: 0, bottom: 0, left: 10, right: 10 }}
-          >
-            <CartesianGrid strokeDasharray="4 4" horizontal={false} />
-            <XAxis
-              axisLine={false}
-              tickLine={false}
-              padding="gap"
-              dataKey="day"
-              tick={{ fill: "#7e8189", fontSize: ".9rem" }}
-              style={{}}
-            />
-            <YAxis
-              type="number"
-              domain={["dataMin - 2000", "dataMax + 2000"]}
-              hide
-            />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke="#daf17d"
-              fill="transparent"
-              strokeWidth={4}
-              activeDot={{
-                stroke: "#daf17d",
-                strokeWidth: 3,
-                fill: "#ffffff",
-                r: 6,
-              }}
-            />
-          </AreaChart>
+          <StepsChart
+            stepsData={stepsData}
+            onHoverValue={(v) => setStepsHover(v)}
+          />
 
           <h2 className="card__description">
             <p>
-              <span>{stepsData.at(-1).value.toLocaleString()}</span> steps
+              <span>
+                {stepsHover?.toLocaleString() ??
+                  stepsData.at(-1).value.toLocaleString()}
+              </span>{" "}
+              steps
             </p>
             <p>
               Yesterday: {stepsData.at(-2)?.value.toLocaleString() ?? "—"} steps

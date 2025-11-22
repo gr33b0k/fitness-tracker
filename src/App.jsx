@@ -4,14 +4,17 @@ import Diet from "./pages/Diet.jsx";
 import Layout from "./pages/Layout.jsx";
 import Analysis from "./pages/Analysis.jsx";
 import Recepies from "./pages/Recepies.jsx";
-import { userInfo } from "./data/data.js";
+import { userInfo, stepsData } from "./data/data.js";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home userInfo={userInfo} />} />
+          <Route
+            index
+            element={<Home userInfo={userInfo} stepsData={stepsData} />}
+          />
           <Route path="diet" element={<Diet />} />
           <Route path="analysis" element={<Analysis />} />
           <Route path="recepies" element={<Recepies />} />
