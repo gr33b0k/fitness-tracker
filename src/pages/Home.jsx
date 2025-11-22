@@ -73,7 +73,7 @@ const Home = ({ userInfo }) => {
           title="Heart Rate"
           titleIcon={<PiHeartbeat />}
         >
-          <ECGChart bpm={110} />
+          <ECGChart bpm={62} />
           <h2 className="card__description">
             <p>
               <span>{userCurrents.bpm}</span> bpm
@@ -124,14 +124,16 @@ const Home = ({ userInfo }) => {
                 r: 6,
               }}
             />
-            <Tooltip
-              position={{ x: 0, y: 130 }}
-              active
-              content={renderTooltip}
-              contentStyle={{ backgroundColor: "transparent", border: "none" }}
-              labelStyle={{ fontSize: "1.2rem" }}
-            />
           </AreaChart>
+
+          <h2 className="card__description">
+            <p>
+              <span>{stepsData.at(-1).value.toLocaleString()}</span> steps
+            </p>
+            <p>
+              Yesterday: {stepsData.at(-2)?.value.toLocaleString() ?? "—"} steps
+            </p>
+          </h2>
         </Card>
         <Card colSpan={2} rowSpan={10} title="Progress"></Card>
         <Card colSpan={3} rowSpan={8} title="Activity"></Card>

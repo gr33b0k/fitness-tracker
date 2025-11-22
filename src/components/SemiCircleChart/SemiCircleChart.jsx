@@ -77,7 +77,7 @@ const SemiCircleChart = ({
           <path
             d="M50 58 A1 1 0 0 0 50 42 L20 49 A1 1 0 0 0 20 51 Z M50 46 m 0 0 a 4 4 0 1 0 1 0"
             fill={strokeColor}
-            fill-rule="evenodd"
+            fillRule="evenodd"
             className="needle"
           >
             <animateTransform
