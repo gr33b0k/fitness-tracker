@@ -1,0 +1,11 @@
+:root {
+    --accent: #daf17d;
+    --accent-hover: #daf17d56;
+
+    --page-bg: #efeff1;
+    --surface-bg: #fffcfb;
+
+    --text-accent: #000;
+    --text-primary: #7e8189;
+    --text-on-primary: #fff;
+}

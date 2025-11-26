@@ -1,0 +1,33 @@
+.profile-badge {
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: var(--surface-bg);
+}
+
+.profile-badge__image {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.profile-badge__name {
+    font-size: 1rem;
+}
+
+.profile-badge__show-profile {
+    width: 40px;
+    aspect-ratio: 1/1;
+    font-size: 1.1rem;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.profile-badge__show-profile svg {
+    vertical-align: middle;
+}
