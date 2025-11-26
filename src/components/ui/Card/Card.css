@@ -1,10 +1,11 @@
 .card {
     display: flex;
     flex-direction: column;
+    background-color: var(--surface-bg);
     padding: 25px;
     border-radius: 40px;
     border: 2px solid var(--page-bg);
-    min-width: 250px;
+    min-width: 230px;
 }
 
 .card__header {
@@ -19,6 +20,10 @@
     font-weight: 500;
 }
 
+.card__subtitle {
+    align-self: self-start;
+}
+
 .card__content {
     display: flex;
     flex-direction: column;
@@ -28,25 +33,67 @@
 }
 
 .card__description {
-    display: flex !important;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-self: start;
 }
 
-.card__description p:nth-child(1) {
+.card__description--large {
     color: #4c5260;
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: .2rem;
 }
 
-.card__description p:nth-child(2) {
+.card__description--large span {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+
+.card__description--small {
     color: var(--text-primary);
     font-size: .9rem;
     font-weight: 500;
 }
 
-.card__description p span {
-    font-size: 1.6rem;
-    font-weight: 700;
+.card__description-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+.card__description-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+
+}
+
+.card__description-list-item-title {
+    position: relative;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__exercise-name {
+    position: relative;
+}
+
+.card__exercise-name::before {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: var(--bullet-color);
+    border-radius: 50%;
 }
