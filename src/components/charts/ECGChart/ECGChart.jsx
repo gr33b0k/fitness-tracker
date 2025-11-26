@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import "./ECGChart.css";
 
 const ECGChart = ({ bpm = 60 }) => {
   const pathRef = useRef(null);
@@ -11,20 +10,16 @@ const ECGChart = ({ bpm = 60 }) => {
     path.style.strokeDasharray = length;
     path.style.strokeDashoffset = length;
   }, []);
-
-  const duration = (60 / bpm) * 6;
-
   return (
     <svg
       viewBox="0 0 130 75"
       preserveAspectRatio="xMidYMid meet"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="ecg-svg"
+      height="100%"
+      width="100%"
     >
       <path
         ref={pathRef}
-        id="ecg-path"
         d="M0 50
         L50 50 L60 10
         A1 1 0 0 1 62 10
@@ -37,10 +32,10 @@ const ECGChart = ({ bpm = 60 }) => {
       >
         <animate
           attributeName="stroke-dashoffset"
-          from="460"
+          from="230"
           to="0"
           dur={60 / bpm}
-          repeatCount="indefinite"
+          fill="freeze"
         />
       </path>
     </svg>

@@ -1,5 +1,3 @@
-import "./SemiCircleChart.css";
-
 const SemiCircleChart = ({
   strokeWidth,
   strokeColor,
@@ -26,6 +24,8 @@ const SemiCircleChart = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={"chart " + className}
+      height="100%"
+      width="100%"
     >
       <defs>
         <clipPath id="half">
@@ -52,7 +52,7 @@ const SemiCircleChart = ({
         strokeWidth={strokeWidth}
         fill="none"
         clipPath="url(#half)"
-        strokeDasharray={`${circumference} ${half}`}
+        strokeDasharray={`${circumference} ${circumference}`}
         strokeDashoffset={strokeDashoffset}
       >
         <animate
